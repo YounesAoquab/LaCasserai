@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ user.Username }}</td>
+            </tr>
+            <tr>
+                <th>Username_cononice</th>
+                <td>{{ user.UsernameCononice }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.Email }}</td>
+            </tr>
+            <tr>
+                <th>Email_canonical</th>
+                <td>{{ user.EmailCanonical }}</td>
+            </tr>
+            <tr>
+                <th>Enabled</th>
+                <td>{{ user.Enabled }}</td>
+            </tr>
+            <tr>
+                <th>Salt</th>
+                <td>{{ user.Salt }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ user.Password }}</td>
+            </tr>
+            <tr>
+                <th>Last_login</th>
+                <td>{{ user.LastLogin }}</td>
+            </tr>
+            <tr>
+                <th>Confirmation_token</th>
+                <td>{{ user.ConfirmationToken }}</td>
+            </tr>
+            <tr>
+                <th>Password_requestes</th>
+                <td>{{ user.PasswordRequestes }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ user.Roles }}</td>
+            </tr>
+            <tr>
+                <th>Last_activity</th>
+                <td>{{ user.LastActivity }}</td>
+            </tr>
+            <tr>
+                <th>Tel_nr</th>
+                <td>{{ user.TelNr }}</td>
+            </tr>
+            <tr>
+                <th>Mobile_nr</th>
+                <td>{{ user.MobileNr }}</td>
+            </tr>
+            <tr>
+                <th>First_name</th>
+                <td>{{ user.FirstName }}</td>
+            </tr>
+            <tr>
+                <th>Insertion_name</th>
+                <td>{{ user.InsertionName }}</td>
+            </tr>
+            <tr>
+                <th>Last_name</th>
+                <td>{{ user.LastName }}</td>
+            </tr>
+            <tr>
+                <th>Adress</th>
+                <td>{{ user.Adress }}</td>
+            </tr>
+            <tr>
+                <th>Zip</th>
+                <td>{{ user.Zip }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ user.City }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ user.Country }}</td>
+            </tr>
+            <tr>
+                <th>Function</th>
+                <td>{{ user.Function }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_index') }}">back to list</a>
+
+    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+
+    {{ include('user/_delete_form.html.twig') }}
+{% endblock %}

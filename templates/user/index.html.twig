@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1>User index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Username_cononice</th>
+                <th>Email</th>
+                <th>Email_canonical</th>
+                <th>Enabled</th>
+                <th>Salt</th>
+                <th>Password</th>
+                <th>Last_login</th>
+                <th>Confirmation_token</th>
+                <th>Password_requestes</th>
+                <th>Roles</th>
+                <th>Last_activity</th>
+                <th>Tel_nr</th>
+                <th>Mobile_nr</th>
+                <th>First_name</th>
+                <th>Insertion_name</th>
+                <th>Last_name</th>
+                <th>Adress</th>
+                <th>Zip</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Function</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.Username }}</td>
+                <td>{{ user.UsernameCononice }}</td>
+                <td>{{ user.Email }}</td>
+                <td>{{ user.EmailCanonical }}</td>
+                <td>{{ user.Enabled }}</td>
+                <td>{{ user.Salt }}</td>
+                <td>{{ user.Password }}</td>
+                <td>{{ user.LastLogin }}</td>
+                <td>{{ user.ConfirmationToken }}</td>
+                <td>{{ user.PasswordRequestes }}</td>
+                <td>{{ user.Roles }}</td>
+                <td>{{ user.LastActivity }}</td>
+                <td>{{ user.TelNr }}</td>
+                <td>{{ user.MobileNr }}</td>
+                <td>{{ user.FirstName }}</td>
+                <td>{{ user.InsertionName }}</td>
+                <td>{{ user.LastName }}</td>
+                <td>{{ user.Adress }}</td>
+                <td>{{ user.Zip }}</td>
+                <td>{{ user.City }}</td>
+                <td>{{ user.Country }}</td>
+                <td>{{ user.Function }}</td>
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="24">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_new') }}">Create new</a>
+{% endblock %}
